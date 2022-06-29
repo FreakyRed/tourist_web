@@ -2,6 +2,7 @@ import React, {useContext} from "react"
 import styled from "styled-components"
 
 import { ThemeContext } from "../../assets/themes/ThemeContext";
+import Stepper from "../stepper/Stepper"
 
 import WorldGlobe from "../../assets/pictures/worldglobe.png"
 
@@ -22,6 +23,7 @@ const Main = () => {
     const theme = useContext(ThemeContext)
 
     return <Container background={theme.background}>
+        <Stepper></Stepper>
         <ContentContainer></ContentContainer>
         <Image src={WorldGlobe} alt></Image>
     </Container>
