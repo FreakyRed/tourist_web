@@ -4,6 +4,9 @@ import styled from "styled-components";
 import NextButton from "../buttons/NextButton";
 import { connect } from "react-redux";
 
+import { useTranslation } from "react-i18next";
+import "../../i18n";
+
 const Container = styled.div`
   margin-top: 1rem;
 `;
@@ -22,26 +25,27 @@ const TextAnswer = styled.p`
 `;
 
 const AboutProject = ({ dispatch }) => {
+  const { t } = useTranslation();
   return (
     <Container>
-      <TitleContainer>Travel with FreeTour Company</TitleContainer>
-      <Text>Is it really free?</Text>
-      <TextAnswer>It really is...this surely is NO scam!</TextAnswer>
+      <TitleContainer>{t("Travel with FreeTour Company")}</TitleContainer>
+      <Text>{t("Is it really free?")}</Text>
+      <TextAnswer>{t("It really is...this surely is NO scam!")}</TextAnswer>
 
-      <Text>Where can I travel to?</Text>
-      <TextAnswer>Anywhere! You have the last word.</TextAnswer>
+      <Text>{t("Where can I travel to?")}</Text>
+      <TextAnswer>{t("Anywhere! You have the last word.")}</TextAnswer>
 
-      <Text>What about accommodation?</Text>
+      <Text>{t("What about accommodation?")}</Text>
       <TextAnswer>
-        We'll take care of everything, just chill out and sign up.
+        {t("We will take care of everything, just chill out and sign up.")}
       </TextAnswer>
 
-      <Text>So where do I sign up?</Text>
-      <TextAnswer>Click the button below.</TextAnswer>
+      <Text>{t("So where do I sign up?")}</Text>
+      <TextAnswer>{t("Click the button below.")}</TextAnswer>
 
       <NextButton
         link="/form"
-        text="Continue"
+        text={t("Continue")}
         onClick={() => {
           dispatch({ type: "INCREASE" });
         }}

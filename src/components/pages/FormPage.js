@@ -5,6 +5,8 @@ import { connect } from "react-redux";
 import { Form, Field } from "react-final-form";
 
 import NextButton from "../buttons/NextButton";
+import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 const Container = styled.div`
   margin-top: 1rem;
@@ -50,13 +52,14 @@ form {
 `;
 
 const FormPage = ({ dispatch }) => {
+  const { t } = useTranslation();
   const onSubmit = () => {
     console.log("Form sent");
   };
 
   return (
     <Container>
-      <TitleContainer>Enter your information</TitleContainer>
+      <TitleContainer>{t("Enter your information")}</TitleContainer>
 
       <Styles>
         <Form
@@ -64,38 +67,38 @@ const FormPage = ({ dispatch }) => {
           render={({ handleSubmit }) => (
             <form onSubmit={handleSubmit}>
               <div>
-                <label>First Name</label>
+                <label>{t("First Name")}</label>
                 <Field
                   name="firstName"
                   component="input"
-                  placeholder="Enter your first name"
+                  placeholder={t("Enter your first name")}
                 />
               </div>
 
               <div>
-                <label>Last Name</label>
+                <label>{t("Last Name")}</label>
                 <Field
                   name="lastName"
                   component="input"
-                  placeholder="Enter your last name"
+                  placeholder={t("Enter your last name")}
                 />
               </div>
 
               <div>
-                <label>E-mail Address</label>
+                <label>{t("E-mail Address")}</label>
                 <Field
                   name="email"
                   component="input"
-                  placeholder="Enter your email"
+                  placeholder={t("Enter your email")}
                 />
               </div>
 
               <div>
-                <label>Phone Number</label>
+                <label>{t("Phone Number")}</label>
                 <Field
                   name="phoneNumber"
                   component="input"
-                  placeholder="Enter your phone number"
+                  placeholder={t("Enter your phone number")}
                 />
               </div>
             </form>
@@ -108,14 +111,14 @@ const FormPage = ({ dispatch }) => {
       <ButtonContainer>
         <NextButton
           link="/"
-          text="Back"
+          text={t("Back")}
           onClick={() => {
             dispatch({ type: "DECREASE" });
           }}
         ></NextButton>
         <NextButton
           link="/details"
-          text="Continue"
+          text={t("Continue")}
           onClick={() => {
             dispatch({ type: "INCREASE" });
           }}

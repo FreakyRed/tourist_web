@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import "../../i18n";
 import { useTranslation } from "react-i18next";
+import "../../i18n";
 
 import { ThemeContext } from "../../assets/themes/ThemeContext";
 
@@ -45,7 +45,7 @@ const Container = styled.div`
 
 const Footer = () => {
   const theme = useContext(ThemeContext);
-
+  const { t } = useTranslation();
   return (
     <Container theme={theme}>
       <FooterCol>
@@ -53,9 +53,9 @@ const Footer = () => {
       </FooterCol>
       <FooterCol>
         <FooterRow>FreeTour Company</FooterRow>
-        <FooterRow>About us</FooterRow>
-        <FooterRow>Contact</FooterRow>
-        <FooterRow>Leave a review</FooterRow>
+        <FooterRow>{t("About us")}</FooterRow>
+        <FooterRow>{t("Contact")}</FooterRow>
+        <FooterRow>{t("Leave a review")}</FooterRow>
       </FooterCol>
       <FooterCol>
         <FooterRow>Lorem Ipsum</FooterRow>

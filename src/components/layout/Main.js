@@ -6,6 +6,9 @@ import Stepper from "../stepper/Stepper";
 
 import WorldGlobe from "../../assets/pictures/worldglobe.png";
 
+import { useTranslation } from "react-i18next";
+import "../../i18n";
+
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -35,10 +38,10 @@ const Title = styled.h1`
 
 const Main = ({ content }) => {
   const theme = useContext(ThemeContext);
-
+  const { t } = useTranslation();
   return (
     <div>
-      <Title>Travel anywhere...free!</Title>
+      <Title>{t("Travel anywhere...free!")}</Title>
       <Container theme={theme}>
         <Image src={WorldGlobe} alt="WorldGlobe"></Image>
         <ContentContainer>
