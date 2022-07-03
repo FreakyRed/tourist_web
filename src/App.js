@@ -6,13 +6,15 @@ import Main from "./components/layout/Main";
 
 import { ThemeContext, ThemeColors } from "./assets/themes/ThemeContext";
 
+import AboutProject from "./components/pages/AboutProject";
+
 const App = () => {
   return (
     <ThemeContext.Provider value={ThemeColors.dark}>
       <Router>
         <NavBar></NavBar>
         <Routes>
-          <Route path="/" element={<Main />}></Route>
+          <Route path="/" element={<Main  content={<AboutProject></AboutProject>}/>}></Route>
         </Routes>
         <Footer></Footer>
       </Router>
