@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
 
 import { ThemeContext } from "../../assets/themes/ThemeContext";
 
@@ -47,7 +47,7 @@ const NavBar = () => {
       <Text theme={theme}>FreeTour Company</Text>
       <Icons theme={theme}>
         <LinkA href="https://www.facebook.com">
-          <FaFacebookF size={18}></FaFacebookF>
+          <FaFacebook size={20}></FaFacebook>
         </LinkA>
         <LinkA href="https://www.instagram.com">
           <FaInstagram size={20}></FaInstagram>
