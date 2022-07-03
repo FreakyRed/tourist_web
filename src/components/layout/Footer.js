@@ -1,11 +1,11 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import '../../i18n';
-import {useTranslation} from 'react-i18next';
+import "../../i18n";
+import { useTranslation } from "react-i18next";
 
 const Container = styled.div`
- position: absolute;
+  position: absolute;
   bottom: 1;
   width: 75%;
   height: 10rem;
@@ -22,38 +22,45 @@ const Container = styled.div`
 `;
 
 const FooterCol = styled.div`
-flex: 1 0 21%;
-margin: 1rem;
-height: 5rem;
+  flex: 1 0 21%;
+  margin: 1rem;
+  height: 5rem;
 `;
 
 const FooterRow = styled.div`
-margin: 1rem;
+  margin: 1rem;
 
-&:first-child {
+  &:first-child {
     font-weight: bold;
-}
-`
+  }
+`;
 
 const Footer = () => {
-    return <Container>
-        <FooterCol>
-    </FooterCol>
-    <FooterCol>
+  return (
+    <Container>
+      <FooterCol></FooterCol>
+      <FooterCol>
         <FooterRow></FooterRow>
         <FooterRow></FooterRow>
         <FooterRow></FooterRow>
         <FooterRow></FooterRow>
-        </FooterCol>
-        <FooterCol>
+      </FooterCol>
+      <FooterCol>
         <FooterRow></FooterRow>
-        <FooterRow>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in interdum ipsum, sit amet. </FooterRow>
-        </FooterCol>
-        <FooterCol>
+        <FooterRow>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
+          interdum ipsum, sit amet.{" "}
+        </FooterRow>
+      </FooterCol>
+      <FooterCol>
         <FooterRow></FooterRow>
-        <FooterRow>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in interdum ipsum, sit amet. </FooterRow>
-        </FooterCol>
-        </Container>
-}
+        <FooterRow>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus in
+          interdum ipsum, sit amet.{" "}
+        </FooterRow>
+      </FooterCol>
+    </Container>
+  );
+};
 
 export default Footer;
