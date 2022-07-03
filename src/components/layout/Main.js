@@ -7,7 +7,6 @@ import Stepper from "../stepper/Stepper";
 import WorldGlobe from "../../assets/pictures/worldglobe.png";
 
 const Container = styled.div`
-  background: ${(props) => props.theme.white};
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -18,7 +17,6 @@ const Container = styled.div`
 const ContentContainer = styled.div`
   flex: 2;
   max-width: 25%;
-  border: 1px solid black;
   heigh: 100%;
   margin: 1rem 3rem 0;
 `;

@@ -6,7 +6,7 @@ import { ThemeContext } from "../../assets/themes/ThemeContext";
 
 const Container = styled.div`
   display: flex;
-  background: ${(props) => props.theme.background};
+  background: ${(props) => props.theme.secondary};
   padding: 0.5rem;
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid ${(props) => props.theme.primary};

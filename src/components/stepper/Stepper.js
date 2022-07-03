@@ -19,7 +19,7 @@ const Button = styled.div`
   width: 25%;
 
   & > ${Tick} {
-    background: ${(props) => props.theme.background};
+    background: ${(props) => props.theme.secondary};
   }
 
   & :nth-child(${(props) => props.value}) {
