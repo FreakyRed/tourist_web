@@ -40,14 +40,7 @@ const AboutProject = ({ dispatch }) => {
       <TextAnswer>Click the button below.</TextAnswer>
 
       <NextButton
-        link="/"
-        text="Back"
-        onClick={() => {
-          dispatch({ type: "DECREASE" });
-        }}
-      ></NextButton>
-      <NextButton
-        link="/"
+        link="/form"
         text="Continue"
         onClick={() => {
           dispatch({ type: "INCREASE" });

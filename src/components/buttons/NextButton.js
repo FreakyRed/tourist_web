@@ -5,21 +5,22 @@ import { Link } from "react-router-dom";
 import { ThemeContext } from "../../assets/themes/ThemeContext";
 
 const Container = styled.button`
-  background: ${(props) => props.theme.background};
+  background: ${(props) => props.theme.primary};
   border-radius: 100px;
   border: none;
   padding: 1rem 2rem 1rem 2rem;
   margin: 1rem;
-  color: ${(props) => props.theme.white};
+  color: ${(props) => props.theme.background};
   float: right;
-
+  
   &:hover {
-    background: #cd8b65;
+      background: ${(props) => props.theme.secondary};
+      color: ${(props) => props.theme.white};
     cursor: pointer;
   }
 
   &:disabled {
-    background: #dfdfdf;
+    background: ${(props) => props.theme.highlight};
     cursor: default;
     transition: background 1s ease-out;
     color: black;
