@@ -7,7 +7,8 @@ import Main from "./components/layout/Main";
 import { ThemeContext, ThemeColors } from "./assets/themes/ThemeContext";
 
 import AboutProject from "./components/pages/AboutProject";
-import FormPage from "./components/pages/FormPage"
+import FormPage from "./components/pages/FormPage";
+import DetailsPage from "./components/pages/DetailsPage";
 
 const App = () => {
   return (
@@ -22,6 +23,10 @@ const App = () => {
           <Route
             path="/form"
             element={<Main content={<FormPage></FormPage>} />}
+          ></Route>
+          <Route
+            path="details"
+            element={<Main content={<DetailsPage></DetailsPage>} />}
           ></Route>
         </Routes>
         <Footer></Footer>

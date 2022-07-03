@@ -31,7 +31,7 @@ form {
       margin: 1rem;
       text-align: right;
       & > label {
-        color: ${props => props.theme.background};
+        color: ${(props) => props.theme.background};
         width: 7rem;
         font-size: 1em;
         line-height: 2rem;
@@ -42,12 +42,12 @@ form {
         padding: 3px 5px;
         font-size: 1em;
         margin-left: 15px;
-        border: 1px solid ${props => props.theme.primary};
+        border: 1px solid ${(props) => props.theme.primary};
         border-radius: 3px;
         max-width: 18rem;
       }
     }
-`
+`;
 
 const FormPage = ({ dispatch }) => {
   const onSubmit = () => {
@@ -56,71 +56,70 @@ const FormPage = ({ dispatch }) => {
 
   return (
     <Container>
-
       <TitleContainer>Enter your information</TitleContainer>
 
-        <Styles>
-      <Form
-        onSubmit={onSubmit}
-        render={({ handleSubmit }) => (
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>First Name</label>
-              <Field
-                name="firstName"
-                component="input"
-                placeholder="Enter your first name"
+      <Styles>
+        <Form
+          onSubmit={onSubmit}
+          render={({ handleSubmit }) => (
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label>First Name</label>
+                <Field
+                  name="firstName"
+                  component="input"
+                  placeholder="Enter your first name"
                 />
-            </div>
+              </div>
 
-            <div>
-              <label>Last Name</label>
-              <Field
-                name="lastName"
-                component="input"
-                placeholder="Enter your last name"
+              <div>
+                <label>Last Name</label>
+                <Field
+                  name="lastName"
+                  component="input"
+                  placeholder="Enter your last name"
                 />
-            </div>
+              </div>
 
-            <div>
-              <label>E-mail Address</label>
-              <Field
-                name="email"
-                component="input"
-                placeholder="Enter your email"
+              <div>
+                <label>E-mail Address</label>
+                <Field
+                  name="email"
+                  component="input"
+                  placeholder="Enter your email"
                 />
-            </div>
+              </div>
 
-            <div>
-              <label>Phone Number</label>
-              <Field
-                name="phoneNumber"
-                component="input"
-                placeholder="Enter your phone number"
-              />
-            </div>
-          </form>
-        )}
+              <div>
+                <label>Phone Number</label>
+                <Field
+                  name="phoneNumber"
+                  component="input"
+                  placeholder="Enter your phone number"
+                />
+              </div>
+            </form>
+          )}
         >
-        <Field></Field>
-      </Form>
-          </Styles>
+          <Field></Field>
+        </Form>
+      </Styles>
 
       <ButtonContainer>
         <NextButton
           link="/"
           text="Back"
           onClick={() => {
-              dispatch({ type: "DECREASE" });
-            }}
-            ></NextButton>
+            dispatch({ type: "DECREASE" });
+          }}
+        ></NextButton>
         <NextButton
-          link="/"
+          link="/details"
           text="Continue"
           onClick={() => {
-              dispatch({ type: "INCREASE" });
-            }}
-            ></NextButton>
+            dispatch({ type: "INCREASE" });
+          }}
+        ></NextButton>
       </ButtonContainer>
     </Container>
   );
