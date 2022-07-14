@@ -4,7 +4,9 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../assets/themes/ThemeContext";
 
-const Container = styled.button`
+const Container = styled.button.attrs(props => ({
+  type: props.type || "button",
+}))`
   background: ${(props) => props.theme.primary};
   border-radius: 100px;
   border: none;
@@ -47,6 +49,7 @@ const NextButton = (props) => {
         theme={theme}
         disabled={props.disabled}
         onClick={props.onClick}
+        type={props.type}
       >
         {props.text}
       </Container>

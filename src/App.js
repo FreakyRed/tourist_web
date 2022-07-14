@@ -9,6 +9,7 @@ import { ThemeContext, ThemeColors } from "./assets/themes/ThemeContext";
 import AboutProject from "./components/pages/AboutProject";
 import FormPage from "./components/pages/FormPage";
 import DetailsPage from "./components/pages/DetailsPage";
+import NewFormPage from "./components/pages/NewFormPage";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
           ></Route>
           <Route
             path="/form"
-            element={<Main content={<FormPage></FormPage>} />}
+            element={<Main content={<NewFormPage></NewFormPage>} />}
           ></Route>
           <Route
             path="details"

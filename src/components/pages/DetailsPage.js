@@ -21,19 +21,19 @@ const TextAnswer = styled.p`
   margin: 1rem;
 `;
 
-const DetailsPage = ({ dispatch }) => {
+const DetailsPage = ({ dispatch, firstName, secondName, emailAddress, phoneNumber}) => {
   const { t } = useTranslation();
   return (
     <Container>
       <TitleContainer>{t("Details about you")}</TitleContainer>
       <Text>{t("Is this your first name?")}</Text>
-      <TextAnswer>{t("")}</TextAnswer>
+      <TextAnswer>{firstName}</TextAnswer>
       <Text>{t("Is this your last name?")}</Text>
-      <TextAnswer>{t("")}</TextAnswer>
+      <TextAnswer>{secondName}</TextAnswer>
       <Text>{t("Is this your email address?")}</Text>
-      <TextAnswer>{t("")}</TextAnswer>
+      <TextAnswer>{emailAddress}</TextAnswer>
       <Text>{t("Is this your phone number?")}</Text>
-      <TextAnswer>{t("")}</TextAnswer>
+      <TextAnswer>{phoneNumber}</TextAnswer>
       <NextButton
         link="/form"
         text={t("Back")}
@@ -45,4 +45,13 @@ const DetailsPage = ({ dispatch }) => {
   );
 };
 
-export default connect()(DetailsPage);
+const mapStateToProps = (state) => {
+  console.log(state)
+  const {form} = state;
+  return {firstName: form.firstName,
+  secondName: form.secondName,
+emailAddress: form.emailAddress,
+phoneNumber: form.phoneNumber}
+}
+
+export default connect(mapStateToProps)(DetailsPage);
