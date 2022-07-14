@@ -1,6 +1,5 @@
 {
     "translation": {
-        "GoodBoy Foundation": "Nadácia GoodBoy",
         "About us": "O nás",
         "Leave a review": "Zanechajte hodnotenie",
         "Contact": "Kontakt",
@@ -29,6 +28,8 @@
         "Enter your last name": "Zadajte priezvisko",
         "Enter your first name": "Zadajte krstné meno",
         "Continue": "Pokračovať",
-        "Back": "Späť"
+        "Back": "Späť",
+        "Second Name": "Priezvisko",
+        "Email Address": "Emailová adresa"
 }
   }

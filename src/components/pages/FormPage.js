@@ -29,6 +29,7 @@ form {
     & > div {
       display: flex;
       flex-flow: row nowrap;
+      flex-direction: column;
       line-height: 2em;
       margin: 1rem;
       text-align: right;
@@ -41,6 +42,7 @@ form {
 
       & > input{
         flex: 1;
+        flex-direction: column;
         padding: 3px 5px;
         font-size: 1em;
         margin-left: 15px;

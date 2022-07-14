@@ -20,14 +20,27 @@ const Container = styled.div`
   margin-top: 1rem;
 `;
 
+const FieldContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 75%;
+  padding: 0 0 1rem 12.5%;
+`;
+
+
 const ButtonContainer = styled.div`
   display: flex;
   flex-wrap: reverse;
   justify-content: space-evenly;
 `;
 
+const TitleContainer = styled.h3`
+  text-align: center;
+  padding-bottom: 1rem;
+`;
 
-const NewFormPage = ({dispatch}) => {
+const NewFormPage = ({ dispatch }) => {
   const { t } = useTranslation();
   const formik = useFormik({
     initialValues: {
@@ -40,65 +53,76 @@ const NewFormPage = ({dispatch}) => {
   });
 
   return (
-    <form onSubmit={formik.onSubmit}>
-      <Container>
-        <TextField
-          id="firstName"
-          name="firstName"
-          label={t("First Name")}
-          value={formik.values.firstName}
-          onChange={formik.handleChange}
-          error={formik.touched.firstName && Boolean(formik.errors.firstName)}
-          helperText={formik.touched.firstName && formik.errors.firstName}
-        ></TextField>
-        <TextField
-          id="secondName"
-          name="secondName"
-          label={t("Second Name")}
-          value={formik.values.secondName}
-          onChange={formik.handleChange}
-          error={formik.touched.secondName && Boolean(formik.errors.secondName)}
-          helperText={formik.touched.secondName && formik.errors.secondName}
-        ></TextField>
-        <TextField
-          id="emailAddress"
-          name="emailAddress"
-          label={t("Email Address")}
-          value={formik.values.emailAddress}
-          onChange={formik.handleChange}
-          error={formik.touched.emailAddress && Boolean(formik.errors.emailAddress)}
-          helperText={formik.touched.emailAddress && formik.errors.emailAddress}
-        ></TextField>
-        <TextField
-          id="phoneNumber"
-          name="phoneNumber"
-          label={t("Phone Number")}
-          value={formik.values.phoneNumber}
-          onChange={formik.handleChange}
-          error={formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)}
-          helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
-        ></TextField>
-      </Container>
+    <Container>
+      <TitleContainer>{t("Enter your information")}</TitleContainer>
+      <form onSubmit={formik.onSubmit}>
+        <FieldContainer>
+          <TextField
+            id="firstName"
+            name="firstName"
+            label={t("First Name")}
+            value={formik.values.firstName}
+            onChange={formik.handleChange}
+            error={formik.touched.firstName && Boolean(formik.errors.firstName)}
+            helperText={formik.touched.firstName && formik.errors.firstName}
+          ></TextField>
+          <TextField
+            id="secondName"
+            name="secondName"
+            label={t("Second Name")}
+            value={formik.values.secondName}
+            onChange={formik.handleChange}
+            error={
+              formik.touched.secondName && Boolean(formik.errors.secondName)
+            }
+            helperText={formik.touched.secondName && formik.errors.secondName}
+          ></TextField>
+          <TextField
+            id="emailAddress"
+            name="emailAddress"
+            label={t("Email Address")}
+            value={formik.values.emailAddress}
+            onChange={formik.handleChange}
+            error={
+              formik.touched.emailAddress && Boolean(formik.errors.emailAddress)
+            }
+            helperText={
+              formik.touched.emailAddress && formik.errors.emailAddress
+            }
+          ></TextField>
+          <TextField
+            id="phoneNumber"
+            name="phoneNumber"
+            label={t("Phone Number")}
+            value={formik.values.phoneNumber}
+            onChange={formik.handleChange}
+            error={
+              formik.touched.phoneNumber && Boolean(formik.errors.phoneNumber)
+            }
+            helperText={formik.touched.phoneNumber && formik.errors.phoneNumber}
+          ></TextField>
+        </FieldContainer>
 
-      <ButtonContainer>
-        <NextButton
-          link="/"
-          text={t("Back")}
-          onClick={() => {
-            dispatch({ type: "DECREASE" });
-          }}
-        ></NextButton>
-        <NextButton
-          link="/details"
-          text={t("Continue")}
-          type="submit"
-          onClick={() => {
-            dispatch({type: "INCREASE"})
-            dispatch({type: "SET_CLIENT_DATA", payload: formik.values})
-          }}
-        ></NextButton>
-      </ButtonContainer>
-    </form>
+        <ButtonContainer>
+          <NextButton
+            link="/"
+            text={t("Back")}
+            onClick={() => {
+              dispatch({ type: "DECREASE" });
+            }}
+          ></NextButton>
+          <NextButton
+            link="/details"
+            text={t("Continue")}
+            type="submit"
+            onClick={() => {
+              dispatch({ type: "INCREASE" });
+              dispatch({ type: "SET_CLIENT_DATA", payload: formik.values });
+            }}
+          ></NextButton>
+        </ButtonContainer>
+      </form>
+    </Container>
   );
 };
 
